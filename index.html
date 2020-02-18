@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+  
+   
+   <script>
+        // JS script goes here
+
+        function computerPlay() {
+
+            let rpsArray = ['Rock', 'Paper', 'Scissors'];
+            let computerMove = rpsArray[Math.floor(Math.random() * rpsArray.length)];
+            return computerMove;
+
+        }
+
+        function playRound(userSelection, computerSelection) {
+            if (computerSelection.toLowerCase() == 'rock') {
+                if (userSelection.toLowerCase() == 'rock') {
+                    return "Draw!";
+                }
+                else if (userSelection.toLowerCase() == 'paper') {
+                    return "You win! Paper beats rock";
+                }
+                else if (userSelection.toLowerCase() == 'scissors') {
+                    return "You lose! Rock beats scissors"
+                }
+                else {
+                    return "Please enter a valid answer: ROCK, PAPER or SCISSORS.";
+                }
+            }
+            else if (computerSelection.toLowerCase() == 'paper') {
+                if (userSelection.toLowerCase() == 'rock') {
+                    return "You lose! Paper beats rock";
+                }
+                else if (userSelection.toLowerCase() == 'paper') {
+                    return "Draw!";
+                }
+                else if (userSelection.toLowerCase() == 'scissors') {
+                    return "You win! Scissors beats paper";
+                }
+                else {
+                    return "Please enter a valid answer: ROCK, PAPER or SCISSORS.";
+                }
+            }
+            else if (computerSelection.toLowerCase() == 'scissors') {
+                if (userSelection.toLowerCase() == 'rock') {
+                    return "You win! Rock beats scissors";
+                }
+                else if (userSelection.toLowerCase() == 'paper') {
+                    return "You lose! Scissors beats paper";
+                }
+                else if (userSelection.toLowerCase() == 'scissors') {
+                    return "Draw!"
+                }
+                else {
+                    return "Please enter a valid answer: ROCK, PAPER or SCISSORS.";
+                }
+
+            }
+
+        }
+
+
+
+        function game() {
+            let playerScore = 0;
+            let compScore = 0;
+
+            let userSelection1 = prompt("What is your move?");
+            let userSelection2 = prompt("What is your move?");
+            let userSelection3 = prompt("What is your move?");
+            let userSelection4 = prompt("What is your move?");
+            let userSelection5 = prompt("What is your move?");
+
+            let computerSelection1 = computerPlay();
+            let computerSelection2 = computerPlay();
+            let computerSelection3 = computerPlay();
+            let computerSelection4 = computerPlay();
+            let computerSelection5 = computerPlay();
+
+
+            round1 = playRound(userSelection1, computerSelection1);
+            if (round1.slice(0,7) == "You win") {
+                    playerScore += 1;
+            }
+            else if (round1.slice(0,8) == "You lose") {
+                    compScore += 1;
+            }
+
+            round2 = playRound(userSelection2, computerSelection2);
+            if (round2.slice(0,7) == "You win") {
+                    playerScore += 1;
+            }
+            else if (round2.slice(0,8) == "You lose") {
+                    compScore += 1;
+            }
+
+            round3 = playRound(userSelection3, computerSelection3);
+            if (round3.slice(0,7) == "You win") {
+                    playerScore += 1;
+            }
+            else if (round3.slice(0,8) == "You lose") {
+                    compScore += 1;
+            }
+
+            round4 = playRound(userSelection4, computerSelection4);
+            if (round4.slice(0,7) == "You win") {
+                    playerScore += 1;
+            }
+            else if (round4.slice(0,8) == "You lose") {
+                    compScore += 1;
+            }
+
+            round5 = playRound(userSelection5, computerSelection5);
+            if (round5.slice(0,7) == "You win") {
+                    playerScore += 1;
+            }
+            else if (round5.slice(0,8) == "You lose") {
+                    compScore += 1;
+            }
+
+            console.log(round1);
+            console.log(round2);
+            console.log(round3);
+            console.log(round4);
+            console.log(round5);
+            console.log(playerScore);
+            console.log(compScore);
+
+
+            if (playerScore > compScore) {
+                return "You win! You won " + playerScore + " out of 5 games.";
+            }
+            else if (playerScore < compScore) {
+                return "You lose. You won " + playerScore + " out of 5 games.";
+            }
+            else if (playerScore == compScore) {
+                return "Draw";
+            }
+
+        }
+
+        
+        
+
+   
+
+        console.log(game());
+        
+
+
+
+    </script>
+
+</body>
+</html>

@@ -5,6 +5,10 @@
     <meta charset="UTF-8"/>
 </head>
 <body>
+
+    <h1>Rock Paper Scissors</h1>
+    <p>What is your move?</p>
+    <input type='input' id='playermove'>
   
    
    <script>
@@ -71,17 +75,9 @@
             let playerScore = 0;
             let compScore = 0;
 
-            let userSelection1 = prompt("What is your move?");
-            let userSelection2 = prompt("What is your move?");
-            let userSelection3 = prompt("What is your move?");
-            let userSelection4 = prompt("What is your move?");
-            let userSelection5 = prompt("What is your move?");
+            let userSelection1 = document.querySelector('#playermove');
 
             let computerSelection1 = computerPlay();
-            let computerSelection2 = computerPlay();
-            let computerSelection3 = computerPlay();
-            let computerSelection4 = computerPlay();
-            let computerSelection5 = computerPlay();
 
 
             round1 = playRound(userSelection1, computerSelection1);
